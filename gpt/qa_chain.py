@@ -56,13 +56,10 @@ prompt_template = """Use the following pieces of context to answer the question 
 
 {context}
 
-this context contain text and image url,
-line begin with "![]" indicate the image url, and this image is complementary explanation to the text above it
+this context contain text and image url, line begin with "![]" indicate the image url, and these images are complementary explanation to the text above it
 
-don't change the order of images and text
 
-Answer:answer in chinese and include the image url if any
-
+Answer:answer in chinese and include the image url if any, and don't change the order of images and text, displays all images one per line
 Question: {question}"""
 
 PROMPT = PromptTemplate(
