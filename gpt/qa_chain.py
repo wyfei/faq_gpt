@@ -29,8 +29,8 @@ def get_docsearch():
     from langchain.text_splitter import CharacterTextSplitter
     text_splitter = CharacterTextSplitter(
         separator = "\n",
-        chunk_size = 500,
-        chunk_overlap = 100,
+        chunk_size = 1000,
+        chunk_overlap = 200,
         length_function = len,
     )
     texts = text_splitter.split_text(data[0].page_content)
@@ -58,8 +58,7 @@ prompt_template = """Use the following pieces of context to answer the question 
 
 this context contain text and image url, line begin with "![]" indicate the image url, and these images are complementary explanation to the text above it
 
-
-Answer:answer in chinese and include the image url if any, and don't change the order of images and text, displays all images one per line
+Answer:answer in chinese and include the original image url in context if any, don't change the image url, and don't change the order of images and text, displays all images one per line
 Question: {question}"""
 
 PROMPT = PromptTemplate(
@@ -87,7 +86,7 @@ def send_message(message: str) -> Callable[[Sender], Awaitable[None]]:
                 model_name=cfg.fast_llm_model, 
                 max_tokens=cfg.fast_stream_max_token,
                 verbose=True), 
-            chain_type="stuff", prompt=PROMPT)
+            chain_type="stuff", prompt=PROMPT, verbose=True)
         await chain.acall({"input_documents": docs, "question": message})
 
     return generate
