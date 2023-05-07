@@ -10,6 +10,7 @@ from .call_back import ChatOpenAIStreamingResponse, Sender, AsyncStreamCallbackH
 from langchain.embeddings import OpenAIEmbeddings
 import faiss
 from langchain.vectorstores import FAISS
+from langchain.document_loaders import TextLoader
 
 cfg = Config()
 
@@ -23,7 +24,7 @@ from langchain.document_loaders import UnstructuredWordDocumentLoader
 def get_docsearch():
     docsearch = None
     
-    loader = UnstructuredWordDocumentLoader(cfg.docx_file)
+    loader = TextLoader(cfg.docx_file)
     data = loader.load()
     
     from langchain.text_splitter import CharacterTextSplitter
@@ -56,9 +57,10 @@ prompt_template = """Use the following pieces of context to answer the question 
 
 {context}
 
-this context contain text and image url, line begin with "![]" indicate the image url, and these images are complementary explanation to the text above it
+above context contain text and image, the image uses markdown syntax that begin with "![]" and http url indicate the image in parentheses next, these sequential images are complementary explanation to the text above it
 
-Answer:answer in chinese and include the original image url in context if any, don't change the image url, and don't change the order of images and text, displays all images one per line
+Answer:answer in chinese and include the original image link url in context if any, don't change image link url and order of images and text paragraph, displays all images link url with markdown syntax "![](url)" one per line, pay attention to line breaks between paragraphs, start a new line for each ordinal paragraph 
+
 Question: {question}"""
 
 PROMPT = PromptTemplate(
