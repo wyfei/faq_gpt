@@ -29,9 +29,9 @@ def get_docsearch():
     
     from langchain.text_splitter import CharacterTextSplitter
     text_splitter = CharacterTextSplitter(
-        separator = "\n",
-        chunk_size = 1000,
-        chunk_overlap = 200,
+        separator = "<END>",
+        chunk_size = 300,
+        chunk_overlap = 0,
         length_function = len,
     )
     texts = text_splitter.split_text(data[0].page_content)
@@ -53,18 +53,28 @@ def get_docsearch():
 
 docsearch = get_docsearch()
 
-prompt_template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+prompt = """
+Answer the question as truthfully as possible using the following context, and if the answer is not contained within the context below, say "I don't know"
 
+Context:
 {context}
 
-above context contain text and image, the image uses markdown syntax that begin with "![]" and http url indicate the image in parentheses next, these sequential images are complementary explanation to the text above it
+###
+Instruction:
+1. In above context, image is represented using the markdown syntax, pattern is ![caption of image](url)
+2. Line begin with "Q" is question and following line util first "<END>" is the answer of this question
 
-Answer:answer in chinese and include the original image link url in context if any, don't change image link url and order of images and text paragraph, displays all images link url with markdown syntax "![](url)" one per line, pay attention to line breaks between paragraphs, start a new line for each ordinal paragraph 
+Constraints:
+1. Answer in chinese
+2. Answer should include images if any and each image is a separate line, don't try to make up a iamge
+3. Pay attention to line breaks
+
+System: This reminds you of these events from your past:
 
 Question: {question}"""
 
 PROMPT = PromptTemplate(
-    template=prompt_template, input_variables=["context", "question"]
+    template=prompt, input_variables=["context", "question"]
 )
 
 class StreamRequest(BaseModel):
@@ -78,7 +88,7 @@ def qa_answer(body: StreamRequest):
     return ChatOpenAIStreamingResponse(send_message(body.message), media_type="text/event-stream")
     
 def send_message(message: str) -> Callable[[Sender], Awaitable[None]]:
-    docs = docsearch.similarity_search(message, k = 2)
+    docs = docsearch.similarity_search(message, k = 3)
     async def generate(send: Sender):
         chain = load_qa_chain(
             OpenAI(
