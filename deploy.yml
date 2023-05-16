@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bi-qa-deploy
+  namespace: gpt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bi-qa
+  template:
+    metadata:
+      labels:
+        app: bi-qa
+    spec:
+      hostAliases:
+        - ip: "47.251.46.153"
+          hostnames:
+          - "openai-proxy.masworld.cn"
+      containers:
+        - name: bi-qa-api
+          image: registry-vpc.cn-beijing.aliyuncs.com/visva/bi_qa:20230515-f5f3610
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: DOCX_FILE
+            value: /src/doc/doc01.txt
+          - name: OPENAI_API_BASE
+            value: https://openai-proxy.masworld.cn/v1
+          - name: OPENAI_API_KEY
+            value: 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
+          ports:
+            - containerPort: 8000
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: bi-qa-svc
+  namespace: gpt
+  labels:
+    app: bi-qa-svc
+spec:
+  type: NodePort
+  selector:
+    app: bi-qa
+  ports:
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30001
+    protocol: TCP

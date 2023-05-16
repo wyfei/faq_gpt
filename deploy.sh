@@ -12,8 +12,8 @@ else
   echo 'container not  exists'
 fi
 
-if [ -n "$2" ] && [ "$2" = "push" ] ;then
-  echo $2
+if [ -n "$1" ] && [ "$1" = "push" ] ;then
+  echo $1
   echo "registry-vpc.cn-beijing.aliyuncs.com/visva/bi_qa:$tag to docker hub------"
   docker push registry-vpc.cn-beijing.aliyuncs.com/visva/bi_qa:$tag
 fi

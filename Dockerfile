@@ -11,7 +11,7 @@ RUN pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors
   && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com uvicorn[standard]==0.22.0 \
   && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com faiss-cpu==1.7.4
 
-EXPOSE 6561
+EXPOSE 8000
 COPY . /src
 WORKDIR /src
 RUN mkdir -p /src/logs
