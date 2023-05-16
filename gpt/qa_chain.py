@@ -54,7 +54,7 @@ def get_docsearch():
 docsearch = get_docsearch()
 
 prompt = """
-Answer the question as truthfully as possible using the following context, and if the answer is not contained within the context below, say "I don't know"
+Answer the question as truthfully as possible using the following context, and if the answer is not contained within the context below, say "对不起，该问题不在我的知识库！"
 
 Context:
 {context}
@@ -66,10 +66,8 @@ Instruction:
 
 Constraints:
 1. Answer in chinese
-2. Answer should include images if any and each image is a separate line, don't try to make up a iamge
+2. Answer should include images if any and each image is a separate line, don't try to make up a image
 3. Pay attention to line breaks
-
-System: This reminds you of these events from your past:
 
 Question: {question}"""
 
