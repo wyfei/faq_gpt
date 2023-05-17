@@ -30,7 +30,7 @@ def get_docsearch():
     from langchain.text_splitter import CharacterTextSplitter
     text_splitter = CharacterTextSplitter(
         separator = "\n\n",
-        chunk_size = 1000,
+        chunk_size = 1200,
         chunk_overlap = 0,
         length_function = len,
     )
