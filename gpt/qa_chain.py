@@ -30,12 +30,12 @@ def get_docsearch():
     from langchain.text_splitter import CharacterTextSplitter
     text_splitter = CharacterTextSplitter(
         separator = "<END>",
-        chunk_size = 300,
+        chunk_size = 1000,
         chunk_overlap = 0,
         length_function = len,
     )
-    texts = text_splitter.split_text(data[0].page_content)
-
+    # texts = text_splitter.split_text(data[0].page_content)
+    texts = list(map(lambda t: t +  "\n<END>", text_splitter.split_text(data[0].page_content)))
     if cfg.memory_backend == "faiss":
         if not FAISS:
             print(
@@ -54,19 +54,20 @@ def get_docsearch():
 docsearch = get_docsearch()
 
 prompt = """
-Answer the question as truthfully as possible using the following context, and if the answer is not contained within the context below, say "对不起，该问题不在我的知识库！"
+you are Bilibili Qa Robot, use the following pieces of context to answer the question at the end, 
+if the answer is not contained within the context below, just give a polite reply
 
 Context:
 {context}
 
 ###
 Instruction:
-1. In above context, image is represented using the markdown syntax, pattern is ![caption of image](url)
-2. Line begin with "Q" is question and following line util first "<END>" is the answer of this question
+1. In above context, and image is represented using the markdown syntax, pattern is "![caption of image](url)", image is part of answer
 
+###
 Constraints:
 1. Answer in chinese
-2. Answer should include images if any and each image is a separate line, don't try to make up a image
+2. 回答不要遗漏文档中相关的图片，不要自己生成一个虚假的图片链接
 3. Pay attention to line breaks
 
 Question: {question}"""
