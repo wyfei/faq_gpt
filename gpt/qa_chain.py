@@ -30,7 +30,7 @@ def get_docsearch():
     from langchain.text_splitter import CharacterTextSplitter
     text_splitter = CharacterTextSplitter(
         separator = "\n\n",
-        chunk_size = 1200,
+        chunk_size = 500,
         chunk_overlap = 0,
         length_function = len,
     )
@@ -61,13 +61,13 @@ Context:
 {context}
 
 ###
-Instruction:
-1. In above context, and image is represented using the markdown syntax, pattern is "![caption of image](url)", image is part of answer
+Instruction of above context:
+1. image is represented using the markdown syntax, pattern is "![caption of image](url)"
 
 ###
 Constraints:
 1. Answer in chinese
-2. 回答不要遗漏文档中相关的图片，不要自己生成一个虚假的图片链接
+2. Answer should include the relevant images in markdown format and do not create a fake image link yourself
 3. Pay attention to line breaks
 
 Question: {question}"""
@@ -87,7 +87,7 @@ def qa_answer(body: StreamRequest):
     return ChatOpenAIStreamingResponse(send_message(body.message), media_type="text/event-stream")
     
 def send_message(message: str) -> Callable[[Sender], Awaitable[None]]:
-    docs = docsearch.similarity_search(message, k = 3)
+    docs = docsearch.similarity_search(message, k = 7)
     async def generate(send: Sender):
         chain = load_qa_chain(
             OpenAI(
