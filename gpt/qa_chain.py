@@ -1,7 +1,8 @@
 from langchain.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
-from langchain.callbacks.base import AsyncCallbackManager
+from langchain.chat_models import ChatOpenAI
+from langchain.callbacks.manager import AsyncCallbackManager
 from config import Config
 from pydantic import BaseModel
 from typing import Any, Awaitable, Callable
@@ -11,6 +12,11 @@ from langchain.embeddings import OpenAIEmbeddings
 import faiss
 from langchain.vectorstores import FAISS
 from langchain.document_loaders import TextLoader
+from .output_parser import (
+    GPTOutputParser,
+    BaseGPTOutputParser,
+)
+from .transfer_question import TransferQuestionGPT
 
 cfg = Config()
 
@@ -55,7 +61,7 @@ docsearch = get_docsearch()
 
 prompt = """
 you are Bilibili Qa Robot, use the following pieces of context to answer the question at the end, 
-if the answer is not contained within the context below, just give a polite reply
+if the answer is not contained within the context below, just give a polite reply in chinese
 
 Context:
 {context}
@@ -81,16 +87,29 @@ class StreamRequest(BaseModel):
     message: str
     
 def qa_answer(body: StreamRequest):
-    # query = "从哪里查看星计划的任务进度？"
-    # docs = docsearch.similarity_search(query, k = 2)
-    # chain({"input_documents": docs, "question": query}, return_only_outputs=True)
-    return ChatOpenAIStreamingResponse(send_message(body.message), media_type="text/event-stream")
+    question = body.message
+    # retrieval_llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo')
+    # retrieval_agent = RetrievalQuestionGPT.from_llm(retrieval_llm)
+    # action = retrieval_agent.run(question=question)
+    # next_step = action.name
+    # print("question: {}, next_step: {}".format(question, next_step)) 
+    # if next_step == 'retrieval':
+    #     reply = action.args["question"]
+    # transfer_llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+    # transfer_agent = TransferQuestionGPT.from_llm(transfer_llm)
+    # action = transfer_agent.run(question=question)
+    # retrieval_question = action.retrieval
+    # print("question: {}, retrieval: {}, similarity: {}".format(question, retrieval_question, action.similarity)) 
+    # if float(action.similarity) < 0.9:
+    #     question=question + retrieval_question
+        
+    return ChatOpenAIStreamingResponse(send_message(question), media_type="text/event-stream")
     
 def send_message(message: str) -> Callable[[Sender], Awaitable[None]]:
     docs = docsearch.similarity_search(message, k = 7)
     async def generate(send: Sender):
         chain = load_qa_chain(
-            OpenAI(
+            ChatOpenAI(
                 streaming=True, 
                 callback_manager=AsyncCallbackManager([AsyncStreamCallbackHandler(send)]),
                 temperature=cfg.temperature, 
