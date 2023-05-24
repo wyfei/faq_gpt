@@ -7,7 +7,8 @@ from fastapi import FastAPI
 from langchain.schema import HumanMessage
 from fastapi.responses import StreamingResponse
 from langchain.chat_models import ChatOpenAI
-from langchain.callbacks.base import AsyncCallbackManager, AsyncCallbackHandler
+from langchain.callbacks.base import AsyncCallbackHandler
+from langchain.callbacks.manager import AsyncCallbackManager
 from typing import Any, Dict, List
 from langchain.schema import LLMResult
 import asyncio
