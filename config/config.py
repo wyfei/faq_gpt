@@ -28,6 +28,12 @@ class Config(metaclass=Singleton):
         self.temperature = float(os.getenv("TEMPERATURE", "1"))
 
         self.memory_backend = os.getenv("MEMORY_BACKEND", "faiss")
+        self.sess_data = os.getenv("SESSDATA")
+        self.bili_jct = os.getenv("BILI_JCT")
+        self.buvid3 = os.getenv("BUVID3")
+        self.rasa_nlu_api = os.getenv("RASA_NLU_API")
+        self.rasa_rest_api = os.getenv("RASA_REST_API")
+        
         # Initialize the OpenAI API client
         openai.api_key = self.openai_api_key
 
@@ -59,6 +65,21 @@ class Config(metaclass=Singleton):
     def set_debug_mode(self, value: bool) -> None:
         """Set the debug mode value."""
         self.debug_mode = value
+        
+    def set_sess_data(self, value: str) -> None:
+        self.sess_data = value
+        
+    def set_bili_jct(self, value: str) -> None:
+        self.bili_jct = value
+        
+    def set_buvid3(self, value: str) -> None:
+        self.buvid3 = value
+        
+    def set_rasa_nlu_api(self, value: str) -> None:
+        self.rasa_nlu_api = value
+        
+    def set_rasa_rest_api(self, value: str) -> None:
+        self.rasa_rest_api = value
 
 
 def check_openai_api_key() -> None:

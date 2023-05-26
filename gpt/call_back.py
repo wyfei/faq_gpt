@@ -7,12 +7,12 @@ from fastapi import FastAPI
 from langchain.schema import HumanMessage
 from fastapi.responses import StreamingResponse
 from langchain.chat_models import ChatOpenAI
-from langchain.callbacks.base import AsyncCallbackHandler
+from langchain.callbacks.base import AsyncCallbackHandler,BaseCallbackHandler
 from langchain.callbacks.manager import AsyncCallbackManager
 from typing import Any, Dict, List
 from langchain.schema import LLMResult
 import asyncio
-
+from .loader.sync import sync
 Sender = Callable[[Union[str, bytes]], Awaitable[None]]
 
 
@@ -49,6 +49,17 @@ class AsyncStreamCallbackHandler(AsyncCallbackHandler):
         await asyncio.sleep(0.3)
         print("Hi! I just woke up. Your llm is ending")
 
+class StreamCallbackHandler(BaseCallbackHandler):
+    """Callback handler for streaming, inheritance from AsyncCallbackHandler."""
+    def __init__(self, send: Sender):
+        super().__init__()
+        self.send = send
+
+    def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
+        """Rewrite on_llm_new_token to send token to client."""
+        sync(self.send(f"data: {token}\n\n"))
+
+        
 class ChatOpenAIStreamingResponse(StreamingResponse):
     """Streaming response for openai chat model, inheritance from StreamingResponse."""
     def __init__(

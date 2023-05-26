@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+- rule: 用户询问日期
+  steps:
+  - intent: ask_date
+  - action: action_ask_date
+
+- rule: 用户询问时间
+  steps:
+  - intent: ask_time
+  - action: action_ask_time
+
+- rule: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- rule: summary
+  steps:
+  - intent: ask_summary
+  - action: action_gpt_summary
+
+- rule: question
+  steps:
+  - intent: ask_question
+  - action: action_gpt_question
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: action_gpt_idle

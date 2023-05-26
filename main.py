@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+import nest_asyncio
+nest_asyncio.apply()
 from api import router as faq_router
+
 
 app = FastAPI()
 
@@ -19,4 +22,4 @@ app.include_router(faq_router, prefix="/faq")
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000 , log_level="info", reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000 , log_level="info", reload=True, loop="asyncio")
