@@ -1,4 +1,4 @@
-FROM khalosa/rasa-aarch64:3.5.2
+FROM rasa/rasa:latest
 ENV TZ "Asia/Shanghai"
 
 RUN pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com python-dotenv==1.0.0 \
