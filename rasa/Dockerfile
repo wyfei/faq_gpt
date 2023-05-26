@@ -5,6 +5,7 @@ RUN pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors
  && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com python-dotenv==1.0.0 \
  && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com rasa-sdk==3.5.1 \
  && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com rasa==3.5.10 \
+ && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com jieba==0.42.1 \
  && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com requests==2.30.0
 
 COPY . /src
