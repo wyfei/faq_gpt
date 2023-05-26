@@ -11,4 +11,4 @@ RUN pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors
  && pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com requests==2.30.0
 EXPOSE 5055
 
-CMD ["run", "actions", "--debug"]
+CMD rasa run actions  
