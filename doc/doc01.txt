@@ -573,7 +573,8 @@ Q：我视频播放超过500了怎么没有显示？
 
 <BEGIN>
 Q：我的视频发到B站流量很差，但我这条视频在抖音发布，播放量都是百万的，B站播放只有几千很低啊
-只要是符合星计划规则的稿件都会得到流量扶持哦，但是流量不等于播放量，播放量很大程度取决于稿件的封面、标题是否吸引用户点击，tag、话题是否精准定向目标用户，以及内容相关的用户喜爱度~ 您可以星计划任务页面中的成长学院处，学习新手UP主课程，会对您有很大帮助哦~此外，平时也可以多刷刷B站的高播稿件学习优化一下
+只要是符合星计划规则的稿件都会得到流量扶持哦，但是流量不等于播放量，播放量很大程度取决于稿件的封面、标题是否吸引用户点击，tag、话题是否精准定向目标用户，以及内容相关的用户喜爱度
+您可以星计划任务页面中的成长学院处，学习新手UP主课程，会对您有很大帮助哦~此外，平时也可以多刷刷B站的高播稿件学习优化一下。
 <END>
 
 <BEGIN>
@@ -605,7 +606,7 @@ https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337
 
 <BEGIN>
 Q：我的视频播放特别低，具体什么原因，还有给一些创作的建议
-亲爱的UP主您好，播放较低可能是由于以下原因，您可以参考自查——
+UP主您好，播放较低可能是由于以下原因，您可以参考自查——
 （1）视频内容违反社区规则而被判定限流，您会在私信收到相应系统通知提醒修改；
 （2）发布时间不同，观众的活跃程度会有差异，建议您重点选取粉丝高活跃时段发布视频，确保视频发出后粉丝第一时间观看。此外，站内用户最活跃时段一般是中午或晚间饭点，供您参考；
 （3）视频的选题、封面标题和内容节奏等对用户吸引力待提升，您可在【创作中心-稿件管理】处查看稿件详细数据表现，及时调整优化。
@@ -616,12 +617,18 @@ Q：我的视频播放特别低，具体什么原因，还有给一些创作的�
 Q：视频BV1ko4y137YR概括以及评估其创作风格
 根据您提供的视频，我推测您应该是想了解【知识区-职业职场】分区中选题为“1个月拿到工作offer”的视频制作优化方向。您的视频时长为1分15秒，核心论点为想要快速工作上岸需要先制定合理的求职计划，视频整体风格偏向总分结构、单一知识点科普、口播为主。根据您的选题方向和视频风格等，我推荐您可参考以下高播放视频，获取包括选题、封面标题设计、内容节奏编排、观众互动方式等维度的灵感——
 【同题】
-1.【求职干货】简历一无可写怎么版？助你领经验get大厂offerhttps://www.bilibili.com/video/BV1Lq4y1X7HX/?spm_id_from=333.337.search-card.all.click
-2.半年时间斩获Java后端大厂offer！看看我都经历了啥。Java学习路线总结https://www.bilibili.com/video/BV1EQ4y1v7EM/?spm_id_from=333.337.search-card.all.click
-3.如何一个月内找到工作https://www.bilibili.com/video/BV12Y411D7U6/?spm_id_from=333.337.search-card.all.click
+1.【求职干货】简历一无可写怎么版？助你领经验get大厂offer
+https://www.bilibili.com/video/BV1Lq4y1X7HX/?spm_id_from=333.337.search-card.all.click
+2.半年时间斩获Java后端大厂offer！看看我都经历了啥。Java学习路线总结
+https://www.bilibili.com/video/BV1EQ4y1v7EM/?spm_id_from=333.337.search-card.all.click
+3.如何一个月内找到工作
+https://www.bilibili.com/video/BV12Y411D7U6/?spm_id_from=333.337.search-card.all.click
 【同风格】
-1.进来涨知识！求职你不知道的那些事，千万别踩坑！https://www.bilibili.com/video/BV1na411s7SJ/?spm_id_from=333.788.recommend_more_video.1&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad
-2.康康 |零经验找实习&面试技巧放送｜简历｜求职｜良心经验分享｜找工作｜应届生校招｜攻略向https://www.bilibili.com/video/BV18t411T7zG/?spm_id_from=333.788.recommend_more_video.4
+1.进来涨知识！求职你不知道的那些事，千万别踩坑！
+https://www.bilibili.com/video/BV1na411s7SJ/?spm_id_from=333.788.recommend_more_video.1&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad
+2.康康 |零经验找实习&面试技巧放送｜简历｜求职｜良心经验分享｜找工作｜应届生校招｜攻略向
+https://www.bilibili.com/video/BV18t411T7zG/?spm_id_from=333.788.recommend_more_video.4 
+
 <END>
 
 星计划活动页面完整规则描述

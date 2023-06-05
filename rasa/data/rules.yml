@@ -45,6 +45,14 @@ rules:
     - action: utter_activity_slots_values
     - intent: affirm
     - action: action_gpt_demo_q1
+    - action: action_restarted
+
+
+- rule: demo question 3 
+  steps:
+    - intent: demo_question_3
+    - action: activity_time_form
+    - active_loop: activity_time_form
 
 - rule: submit activity time form
   condition:
@@ -53,6 +61,7 @@ rules:
     - action: activity_time_form
     - active_loop: null
     - action: action_gpt_demo_q4
+    - action: action_restarted
 
 - rule: submit activity2 form
   condition:
@@ -61,14 +70,27 @@ rules:
     - action: activity2_form
     - active_loop: null
     - action: action_gpt_demo_q5
+    - action: action_restarted
 
 - rule: submit activity + ask other
   steps:
     - intent: deny_ask_other
     - action: action_gpt_demo_q3
+    - action: action_restarted
 
 - rule: submit video url + ask analysis
   steps:
     - intent: sumbit_video_url
-    - action: action_gpt_demo_q7_2
+    - action: utter_question_7_answer
+    - action: action_restarted
+
+- rule: question 8 first round
+  steps:
+    - intent: demo_question_8_1
+    - action: utter_question_8_answer_1
+
+- rule: question 8 second round
+  steps:
+    - intent: demo_question_8_2
+    - action: utter_question_8_answer_2
     - action: action_restarted

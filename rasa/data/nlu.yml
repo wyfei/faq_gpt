@@ -331,3 +331,15 @@ nlu:
   examples: |
     - [https://www.bilibili.com/video/BV1ko4y137YR/?spm_id_from=333.337.search-card.all.click](bilibili_url)
     - [https://www.bilibili.com/video/BV1ko4y137YR/](bilibili_url)
+
+- intent: demo_question_8_1
+  examples: |
+    - 我想要发布如何正确使用AI来提升视频内容创作效率的视频选题的内容，你有什么建议吗？
+    - 对于如何正确使用AI来提升视频内容创作效率的视频选题你有什么建议？
+    - 我想要发布如何正确使用AI来提升视频内容创作效率的视频选题的内容好不好？
+
+- intent: demo_question_8_2
+  examples: |
+    - 好的，有没有什么比较好的相关视频呀，我想看一下
+    - ok，我想看一下比较好的相关的视频
+    - 嗯， 给我推荐一下比较好的相关视频

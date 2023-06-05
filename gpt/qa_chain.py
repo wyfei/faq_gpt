@@ -72,7 +72,7 @@ Instruction of above context:
 ###
 Constraints:
 1. Answer in chinese
-2. Answer should include the relevant images in markdown format and do not create a fake image link yourself
+2. Answer should include the relevant images base on caption in markdown format if any and do not create a fake image link yourself
 3. Pay attention to line breaks
 
 Question: {question}"""

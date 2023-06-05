@@ -11,6 +11,7 @@ stories:
   - action: utter_activity_slots_values
   - intent: affirm
   - action: action_gpt_demo_q1
+  - action: action_restarted
 
 - story: demo question 2 affirm path
   steps:
@@ -20,6 +21,7 @@ stories:
   - action: action_gpt_demo_q2
   - intent: intense_emotion
   - action: utter_intense_emotion_of_play_amount
+  - action: action_restarted
 
 - story: demo question 2 deny_ask_other path
   steps:
@@ -27,6 +29,7 @@ stories:
   - action: utter_ask_demo2_1
   - intent: deny_ask_other
   - action: action_gpt_demo_q3
+  - action: action_restarted
 
 - story: demo question 3 happy path
   steps:
@@ -37,6 +40,7 @@ stories:
   - action: activity_time_form
   - active_loop: null
   - action: action_gpt_demo_q4
+  - action: action_restarted
 
 - story: demo question 5 happy path 1
   steps:
@@ -47,6 +51,7 @@ stories:
   - action: activity2_form
   - active_loop: null
   - action: action_gpt_demo_q5
+  - action: action_restarted
 
 - story: demo question 6 how to acquire flow
   steps:
@@ -62,5 +67,5 @@ stories:
   - intent: demo_question_7
   - action: action_gpt_demo_q7_1
   - intent: sumbit_video_url
-  - action: action_gpt_demo_q7_2
+  - action: utter_question_7_answer
   - action: action_restarted
