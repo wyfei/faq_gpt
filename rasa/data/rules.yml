@@ -29,9 +29,46 @@ rules:
 - rule: question
   steps:
   - intent: ask_question
-  - action: action_gpt_question
+  - action: action_gpt_ask
 
 - rule: out-of-scope
   steps:
   - intent: out_of_scope
-  - action: action_gpt_idle
+  - action: action_gpt_chitchat
+
+- rule: submit activity form
+  condition:
+  - active_loop: activity_form
+  steps:
+    - action: activity_form
+    - active_loop: null
+    - action: utter_activity_slots_values
+    - intent: affirm
+    - action: action_gpt_demo_q1
+
+- rule: submit activity time form
+  condition:
+  - active_loop: activity_time_form
+  steps:
+    - action: activity_time_form
+    - active_loop: null
+    - action: action_gpt_demo_q4
+
+- rule: submit activity2 form
+  condition:
+  - active_loop: activity2_form
+  steps:
+    - action: activity2_form
+    - active_loop: null
+    - action: action_gpt_demo_q5
+
+- rule: submit activity + ask other
+  steps:
+    - intent: deny_ask_other
+    - action: action_gpt_demo_q3
+
+- rule: submit video url + ask analysis
+  steps:
+    - intent: sumbit_video_url
+    - action: action_gpt_demo_q7_2
+    - action: action_restarted

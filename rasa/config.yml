@@ -1,5 +1,5 @@
 recipe: default.v1
-assistant_id: 20230416-203150-proud-texture
+assistant_id: bi_qa_bot
 language: zh
 pipeline:
   - name: JiebaTokenizer  # 分词器，用于处理中文文本
@@ -10,5 +10,6 @@ pipeline:
     epochs: 100  # 训练轮数，可以根据需要进行调整
     constrain_similarities: True
 policies:
-  - name: MemoizationPolicy  # 记忆策略，用于记住先前的对话状态
-  - name: RulePolicy  # 规则策略，用于处理基于规则的对话逻辑
+  - name: "AugmentedMemoizationPolicy"
+    max_history: 3
+  - name: RulePolicy

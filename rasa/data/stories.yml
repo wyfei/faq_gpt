@@ -1,9 +1,66 @@
 version: "3.1"
-
 stories:
-
-- story: happy path
+- story: demo question 1 happy path 1
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: demo_question_1
+  - action: activity_form
+  - active_loop: activity_form
+  - intent: inform_activity
+  - action: activity_form
+  - active_loop: null
+  - action: utter_activity_slots_values
+  - intent: affirm
+  - action: action_gpt_demo_q1
 
+- story: demo question 2 affirm path
+  steps:
+  - intent: demo_question_2
+  - action: utter_ask_demo2_1
+  - intent: affirm
+  - action: action_gpt_demo_q2
+  - intent: intense_emotion
+  - action: utter_intense_emotion_of_play_amount
+
+- story: demo question 2 deny_ask_other path
+  steps:
+  - intent: demo_question_2
+  - action: utter_ask_demo2_1
+  - intent: deny_ask_other
+  - action: action_gpt_demo_q3
+
+- story: demo question 3 happy path
+  steps:
+  - intent: demo_question_3
+  - action: activity_time_form
+  - active_loop: activity_time_form
+  - intent: inform_activity_time
+  - action: activity_time_form
+  - active_loop: null
+  - action: action_gpt_demo_q4
+
+- story: demo question 5 happy path 1
+  steps:
+  - intent: demo_question_5
+  - action: activity2_form
+  - active_loop: activity2_form
+  - intent: inform_activity
+  - action: activity2_form
+  - active_loop: null
+  - action: action_gpt_demo_q5
+
+- story: demo question 6 how to acquire flow
+  steps:
+  - intent: demo_question_6
+  - action: utter_how_to_acquire_flow_1
+  - intent: recommend_activity
+  - action: action_gpt_demo_q6
+  - intent: aigc_part_suggest
+  - action: utter_suggest_aigc_post
+
+- story: demo question 7 video diagnose
+  steps:
+  - intent: demo_question_7
+  - action: action_gpt_demo_q7_1
+  - intent: sumbit_video_url
+  - action: action_gpt_demo_q7_2
+  - action: action_restarted

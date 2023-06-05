@@ -4,7 +4,6 @@ from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.callbacks.manager import AsyncCallbackManager
 from config import Config
-from pydantic import BaseModel
 from typing import Any, Awaitable, Callable
 from .call_back import ChatOpenAIStreamingResponse, Sender, AsyncStreamCallbackHandler
 
@@ -81,13 +80,9 @@ Question: {question}"""
 PROMPT = PromptTemplate(
     template=prompt, input_variables=["context", "question"]
 )
-
-class StreamRequest(BaseModel):
-    """Request body for streaming."""
-    message: str
     
-def qa_answer(body: StreamRequest):
-    question = body.message
+def qa_answer(question: str):
+    # question = body.message
     # retrieval_llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo')
     # retrieval_agent = RetrievalQuestionGPT.from_llm(retrieval_llm)
     # action = retrieval_agent.run(question=question)

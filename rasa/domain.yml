@@ -8,21 +8,125 @@ intents:
   - ask_summary
   - ask_question
   - out_of_scope
+  - affirm
+  - deny
+  - inform_activity
+  - demo_question_1
+  - demo_question_2
+  - intense_emotion
+  - deny_ask_other
+  - demo_question_3
+  - demo_question_5
+  - demo_question_6
+  - demo_question_7
+  - inform_activity_time
+  - recommend_activity
+  - aigc_part_suggest
+  - sumbit_video_url
+
+entities:
+  - activity
+  - question
+  - time
+  - bilibili_url
+
+slots:
+  activity:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: activity
+  question:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: question
+  time:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: time
+  bilibili_url:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: bilibili_url
 
 responses:
   utter_greet:
-  - text: "你好，有什么可以帮助您的吗？"
+    - text: "你好，有什么可以帮助您的吗？"
 
   utter_goodbye:
-  - text: "那我先离开了，一会有事叫我"
-  - text: "先不打扰你了，你可以随时唤醒我"
+    - text: "那我先离开了，一会有事叫我"
+    - text: "先不打扰你了，你可以随时唤醒我"
 
+  utter_ask_activity:
+    - text: "亲爱的UP主，请问您是指以下任一活动吗（若是请回复对应数字编号）？如果我没有覆盖到您参与的活动，也辛苦告诉我活动名称哦～ \n 
+            1. 星计划：https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
+            2. AIGC启航计划：https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html \n 
+            3. 宝藏老师夏日企划：https://www.bilibili.com/blackboard/activity-vZYjU10ayo.html"
+
+  utter_ask_activity2:
+    - text: "亲爱的UP主，请问您是指以下任一活动吗（若是请回复对应数字编号）？如果我没有覆盖到您参与的活动，也辛苦告诉我活动名称哦～ \n 
+            1. 星计划：https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
+            2. AIGC启航计划：https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html \n 
+            3. 宝藏老师夏日企划：https://www.bilibili.com/blackboard/activity-vZYjU10ayo.html"
+
+  utter_activity_slots_values:
+    - text: "好的了解。您是指{activity}-限时任务页面的播放进度条没实时显示吗？"
+
+  utter_ask_demo2_1:
+    - text: "UP主您好，很抱歉您有这样的感受，我会尽力帮助您提升投稿体验。请问你有参与“星计划”，并且仍然处于任务生效期间吗？"
+
+  utter_intense_emotion_of_play_amount:
+    - text: "平台间用户对于内容画风的偏好不同，建议可以多学习B站高播内容了解用户喜好，作出相应的调整尝试优化哦。您也可以提供相关的视频链接，我们会按客询顺序，帮您看看具体情况哦。"
+
+  utter_ask_activity_time_form_activity:
+    - text: "亲爱的UP主，请问您是指“星计划”活动的“优质内容任务”吗？如果是的话，也请告诉我你成功通过星计划报名审核的年/月/日期，我来为您核实情况哦！"
+
+  utter_ask_activity_time_form_time:
+    - text: "亲爱的UP主，请问您是指“星计划”活动的“优质内容任务”吗？如果是的话，也请告诉我你成功通过星计划报名审核的年/月/日期，我来为您核实情况哦！"
+
+  utter_how_to_acquire_flow_1:
+    - text: "亲爱的UP主您好，您可以通过优化视频封面标题及内容、上传视频时正确打标签、加强与粉丝互动等方式来提升视频的数据数据哦！如果您是新人UP主，推荐您观看我们站内的创作学院，学习更多创作技能：https://member.bilibili.com/academy/。此外，投稿到站内最新活动，也有机会获得更多的活动曝光和流量扶持！"
+
+  utter_suggest_aigc_post:
+    - text: "5、了解了，这是一个不错的题材，很期待～根据您的题材，我推荐您可以投稿知识区的《AIGC启航计划》活动，您可以点击链接跳转活动页面查看奖励规则详情，以及浏览同类题材优质视频获取灵感哦： \n
+            https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html?spm_id_from=333.337.0.0"
+  
 actions:
+  - action_restarted
   - action_ask_time
   - action_ask_date
   - action_gpt_summary
-  - action_gpt_question
-  - action_gpt_idle
+  - action_gpt_ask
+  - action_gpt_chitchat
+  - action_gpt_demo_q1
+  - action_gpt_demo_q2
+  - action_gpt_demo_q3
+  - action_gpt_demo_q4
+  - action_gpt_demo_q5
+  - action_gpt_demo_q6
+  - action_gpt_demo_q7_1
+  - action_gpt_demo_q7_2
+  - validate_activity_form
+  - validate_activity_time_form
+
+forms:
+  activity_form:
+    required_slots:
+      - activity
+  activity2_form:
+    required_slots:
+      - activity
+  activity_time_form:
+    required_slots:
+      - activity
+      - time
 
 session_config:
   session_expiration_time: 60

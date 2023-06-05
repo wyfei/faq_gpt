@@ -166,6 +166,7 @@ nlu:
     - 为什么我收到了提示有奖金，但实际没收到钱
     - bilibili的审核策略是什么
     - 为什么我的稿子没有通过审核
+    - 星计划相关的视频一定要打星计划的tag吗
     - 你是谁
 
 - intent: out_of_scope
@@ -187,3 +188,146 @@ nlu:
     - 喜马拉雅山有多高
     - 推荐一首周杰伦的歌曲
   
+- intent: affirm
+  examples: |
+    - 是的
+    - correct
+    - ye
+    - uh yes
+    - let's do it
+    - yeah
+    - uh yes
+    - um yes
+    - that's correct
+    - yes yes
+    - right
+    - yea
+    - yes
+    - yes right
+    - yes and i dont care
+    - right on
+    - i love that
+    - 对
+    - 没错
+    - 嗯
+    - 嗯嗯
+    - 是
+    - 可以
+    - 没问题
+    - 行
+    - 对的
+    - 好的
+
+- intent: deny
+  examples: |
+    - no
+    - no new selection
+    - no thanks
+    - no thank you
+    - uh no
+    - breath no
+    - do you have something else
+    - no this does not work for me
+    - 不对
+    - 不是
+    - 否
+    - 错了
+    - 没有
+    - 不好
+    - 不同意
+    - 不行
+
+- intent: deny_ask_other
+  examples: |
+    - 没有，星计划是什么
+    - 不是，星计划是什么
+
+- intent: demo_question_1
+  examples: |
+    - 我视频播放超过500了,[星计划](activity)任务页面怎么没有显示？
+    - 我视频播放超过500了,[星计划](activity)任务页面播放进度条怎么没有显示？
+    - 我视频播放超过500了怎么没有显示？
+    - 我视频播放超过500了播放进度条怎么没有显示？
+    - 为什么任务页面没有显示我的视频？
+    - 为什么[星计划](activity)任务页面没有显示我的视频？
+    - 为什么任务页面的播放进度条没有显示我的视频？
+    - 为什么[星计划](activity)任务页面的播放进度条没有显示我的视频？
+    - 为什么我的[星计划](activity)视频播放超过500了但任务页面没有显示？
+    - 为什么我的视频播放超过500了但[星计划](activity)任务页面没有显示？
+    - 为什么我的[星计划](activity)视频播放超过500了但任务页面的播放进度条没有显示？
+    - 为什么我的视频播放超过500了但[星计划](activity)任务页面的播放进度条没有显示？
+
+- intent: inform_activity
+  examples: |
+    - [1](activity:星计划)
+    - [2](activity:AIGC启航计划)
+    - [3](activity:宝藏老师夏日企划)
+    - [星计划](activity)
+    - [AIGC启航计划](activity)
+    - [宝藏老师夏日企划](activity)
+
+- intent: demo_question_2
+  examples: |
+    - 我的视频发到B站流量很差，为什么？
+    - 为什么我的视频流量很差？
+    - 我的视频流量很差，你们是不是把我限流了？
+    - 我的视频被限流的吗？
+
+- intent: intense_emotion
+  examples: |
+    - 但我这条视频在抖音发布，播放量都是百万的，B站播放只有几千很低啊
+    - 我这条视频在其他平台播放量都很高，为什么在你们这就很低
+
+- intent: demo_question_3
+  examples: |
+    - 我到100万播放了，为什么没有点亮第二关？
+    - [星计划](activity)活动中，我到100万播放了，为什么没有点亮第二关？
+    - [2023的5月20日](time)报名[星计划](activity)，我到100万播放了，为什么没有点亮第二关？
+    - 我是在[2023的5月20日](time)报名[星计划](activity)，现在我的视频一共有100万播放了，为什么没有点亮第二关？
+    - 为什么我的播放量超过100万但是还没有点亮第二关
+    - 我到100万播放了，为什么我的[星计划](activity)第二关还有点亮
+    - 我到100万播放了，为什么我[2023的5月20日](time)报名的[星计划](activity)第二关还有点亮
+
+- intent: inform_activity_time
+  examples: |
+    - [对](activity)，我报名通过的日期是[2023的5月20日](time)
+    - [对](activity)的，我报名通过的日期是[2023的5月20日](time)
+    - [是的](activity)，我报名的日期大概是是[2023的5月份](time)
+    - 我报名通过的日期是[2023的5月20日](time)
+    - 我报名的日期大概是是[2023的5月份](time)
+
+- intent: demo_question_5
+  examples: |
+    - 我完成任务了，怎么没收到钱啊？
+    - [星计划](activity)任务完成了，怎么没有收到钱？
+    - 我完成了[星计划](activity)任务，为什么没有收到钱？
+
+- intent: demo_question_6
+  examples: |
+    - 有什么方式能获得流量？
+    - 怎么样才能获得流量？
+    - 我改怎么做可以获得更多的流量？
+    - 我想获得更多的流量该怎么做？
+    - 流量怎么获得？
+
+- intent: recommend_activity
+  examples: |
+    - 有什么推荐的活动吗？
+    - 帮我推荐下活动？
+    - 最近有什么活动吗？
+
+- intent: aigc_part_suggest
+  examples: |
+    - 我是知识区的，打算投稿AIGC的科普视频
+    - 我打算在知识区投稿AIGC的科普视频
+    - 准备做知识区AIGC的科普视频怎么样
+
+- intent: demo_question_7
+  examples: |
+    - 我的视频播放特别低，为什么啊？
+    - 帮我看下为什么我这个视频的播放数据特别低
+
+- intent: sumbit_video_url
+  examples: |
+    - [https://www.bilibili.com/video/BV1ko4y137YR/?spm_id_from=333.337.search-card.all.click](bilibili_url)
+    - [https://www.bilibili.com/video/BV1ko4y137YR/](bilibili_url)
