@@ -208,8 +208,8 @@ Q：我在限时任务中投的稿件，在新手成长任务中还计算吗？
 <END>
 
 <BEGIN>
-Q：想问一下 发星计划相关的视频一定要打星计划的tag吗？
-星计划是不强求投稿一定带#星计划#tag的，您可以根据自己的视频内容携带关联度较高的活动话题以及标签就好~
+Q：星计划相关的视频一定要打星计划的tag吗？
+亲爱的UP主您好，星计划是不强求投稿一定带#星计划#tag的，您可以根据自己的视频内容携带关联度较高的活动话题以及标签就好~
 <END>
 
 <BEGIN>
@@ -560,7 +560,7 @@ A：激励结算周期会与您设置的结算方式相关：
 
 <BEGIN>
 Q：我完成任务了，怎么没收到钱啊？
-好的了解。根据星计划的活动规定，UP主将在任务全部结束后进行为期3天的审核，审核通过后奖金就会自动发到UP主的激励金账户里啦。活动细则请查阅规则页面的【第3.3-奖励发放】部分：https://www.bilibili.com/blackboard/activity-4jRV7jWKkx.html
+好的了解。根据星计划的活动规定，您将在任务全部结束后进行为期4天的审核，审核通过后奖金就会自动发到UP主的激励金账户里啦。活动细则请查阅规则页面的【第3.3-奖励发放】部分：https://www.bilibili.com/blackboard/activity-4jRV7jWKkx.html
 ![我完成任务了怎么没收到钱啊](https://ms-yzc.oss-cn-beijing.aliyuncs.com/biqa/xinjihua01/wanchengrenwuweifajiangjin.png)
 <END>
 
@@ -573,13 +573,13 @@ Q：我视频播放超过500了怎么没有显示？
 
 <BEGIN>
 Q：我的视频发到B站流量很差，但我这条视频在抖音发布，播放量都是百万的，B站播放只有几千很低啊
-只要是符合星计划规则的稿件都会得到流量扶持哦，但是流量不等于播放量，播放量很大程度取决于稿件的封面、标题是否吸引用户点击，tag、话题是否精准定向目标用户，以及内容相关的用户喜爱度
-您可以星计划任务页面中的成长学院处，学习新手UP主课程，会对您有很大帮助哦~此外，平时也可以多刷刷B站的高播稿件学习优化一下。
+只要是符合星计划规则的稿件都会得到流量扶持哦，但是流量不等于播放量，播放量很大程度取决于稿件的封面、标题是否吸引用户点击，tag、话题是否精准定向目标用户，以及内容相关的用户喜爱度~ 
+您平时也可以多刷刷B站的高播稿件学习优化。此外，您也可以星计划任务页面中的成长学院处，学习新手UP主课程，会对您有很大帮助哦：https://member.bilibili.com/academy/seriesDetail?id=6
 <END>
 
 <BEGIN>
 Q：我的视频流量很差，你们是不是把我限流了
-星计划是帮助各大平台优质创作者和MCN机构在B站快速成长的扶持计划，您可以在站内搜索【星计划】并点击置顶页面了解详情。
+星计划是帮助各大平台优质创作者和MCN机构在B站快速成长的扶持计划，您可以在站内搜索【星计划】并点击置顶页面了解详情：https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0
 如果是普通投稿，且因违反社区投稿规则而被判定限流，您会在【私信列表】处收到系统通知，您可以点击该通知或咨询站内客服，以了解更多视频修改建议。
 如果未收到相关限流通知，建议您可到【个人创作中心-稿件管理】处，查看稿件数据详情，通过调整封面、标题、内容剪辑等方式来提升数据表现～
 ![我的视频流量很差，你们是不是把我限流了](https://ms-yzc.oss-cn-beijing.aliyuncs.com/biqa/xinjihua01/xingjihualiuliang.png)
@@ -589,24 +589,24 @@ Q：我的视频流量很差，你们是不是把我限流了
 Q：我到100万播放了，为什么没有点亮第二关？
 好的，播放到达了100万却没有点亮第二关，可能是因为以下两种情况导致：
 （1）第一关没有点亮，导致第二关无法开启；
-（2）页面未显示累计播放达100万导致未点亮，播放数量一般为T+1更新、且稿件需要符合活动规则中的投稿要求。UP主可以根据上述自查原因。活动细则请查阅规则页面的【第3.2.4-进阶冲刺任务】部分：https://www.bilibili.com/blackboard/activity-4jRV7jWKkx.html
+（2）页面未显示累计播放达100万导致未点亮，播放数量一般为T+1更新、且稿件需要符合活动规则中的投稿要求。UP主可以根据上述自查原因。
+活动细则请查阅规则页面的【第3.2.4-进阶冲刺任务】部分：https://www.bilibili.com/blackboard/activity-4jRV7jWKkx.html
 ![我到100万播放了，为什么没有点亮第二关](https://ms-yzc.oss-cn-beijing.aliyuncs.com/biqa/xinjihua01/jinjiechongcirenwu.png)
 <END>
 
 <BEGIN>
-Q：有什么推荐的活动可以获得流量吗
-以下是站内在线的投稿活动，您可以参考选择。此外，您也可以告诉我您的主要投稿分区，我可以为您推荐该分区下目前在线的相关活动哦！
-新UP主冷启《星计划》：
-https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0
-知识区《AIGC启航计划》：https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html
-动画区《致热爱动画的你：2023春季创作激励》：https://www.bilibili.com/blackboard/activity-animespringchallenge.html
-游戏/动画/手绘等区《哔哩哔哩二创季》：https://www.bilibili.com/blackboard/activity-FVtaCcUHML.html
-动物圈《鉴赏家招募计划》：https://www.bilibili.com/blackboard/activity-0eNQrh3lAy.htmlhttps://www.bilibili.com/blackboard/activity-0eNQrh3lAy.html
+Q：有什么推荐的活动可以获得流量吗？
+以下是站内在线的投稿活动，您可以参考选择。
+1.  知识区《AIGC启航计划》：https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html
+2.  动画区《致热爱动画的你：2023春季创作激励》：https://www.bilibili.com/blackboard/activity-animespringchallenge.html
+3.  游戏/动画/手绘等区《哔哩哔哩二创季》：https://www.bilibili.com/blackboard/activity-FVtaCcUHML.html
+4.  动物圈《鉴赏家招募计划》：https://www.bilibili.com/blackboard/activity-0eNQrh3lAy.html
+此外，您也可以告诉我您希望投稿的分区，我可以为您推荐该分区下目前在线的相关活动哦！
 <END>
 
 <BEGIN>
 Q：我的视频播放特别低，具体什么原因，还有给一些创作的建议
-UP主您好，播放较低可能是由于以下原因，您可以参考自查——
+1、亲爱的UP主您好，播放较低可能是由于以下原因，您可以参考自查——
 （1）视频内容违反社区规则而被判定限流，您会在私信收到相应系统通知提醒修改；
 （2）发布时间不同，观众的活跃程度会有差异，建议您重点选取粉丝高活跃时段发布视频，确保视频发出后粉丝第一时间观看。此外，站内用户最活跃时段一般是中午或晚间饭点，供您参考；
 （3）视频的选题、封面标题和内容节奏等对用户吸引力待提升，您可在【创作中心-稿件管理】处查看稿件详细数据表现，及时调整优化。
@@ -629,6 +629,11 @@ https://www.bilibili.com/video/BV1na411s7SJ/?spm_id_from=333.788.recommend_more_
 2.康康 |零经验找实习&面试技巧放送｜简历｜求职｜良心经验分享｜找工作｜应届生校招｜攻略向
 https://www.bilibili.com/video/BV18t411T7zG/?spm_id_from=333.788.recommend_more_video.4 
 
+<END>
+
+<BEGIN>
+Q：但我不是所有的稿件都违反了规定，为啥所有的奖金都取消？
+A：任务完成情况及获奖金额，最终是根据账号情况综合评估发放的，若已被取消活动参与/奖金发放资格，无法获得最终奖励，后续无法补回哦。
 <END>
 
 星计划活动页面完整规则描述

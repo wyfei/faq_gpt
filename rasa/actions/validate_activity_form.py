@@ -60,54 +60,12 @@ class ValidateActivityForm(FormValidationAction):
             return {"activity": None}
 
 
-class ValidateActivityTimeForm(FormValidationAction):
+class ValidateTimeForm(FormValidationAction):
     """Example of a form validation action."""
 
     def name(self) -> Text:
-        return "validate_activity_time_form"
+        return "validate_time_form"
 
-    @staticmethod
-    def activity_db() -> List[Text]:
-        """Database of supported activity."""
-
-        return [
-            "星计划",
-            "AIGC启航计划",
-            "宝藏老师夏日企划"
-        ]
-
-    @staticmethod
-    def is_int(string: Text) -> bool:
-        """Check if a string is an integer."""
-
-        try:
-            int(string)
-            return True
-        except ValueError:
-            return False
-
-    def validate_activity(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> Dict[Text, Any]:
-        """Validate activity value."""
-
-        
-        value = "星计划"
-            
-        print(value)
-        if value.lower() in self.activity_db():
-            # validation succeeded, set the value of the "activity" slot to value
-            return {"activity": value}
-        else:
-            dispatcher.utter_message(response="utter_wrong_activity")
-            # validation failed, set this slot to None, meaning the
-            # user will be asked for the slot again
-            return {"activity": None}
-        
     def validate_time(
         self,
         value: Text,

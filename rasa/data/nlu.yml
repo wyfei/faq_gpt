@@ -166,8 +166,9 @@ nlu:
     - 为什么我收到了提示有奖金，但实际没收到钱
     - bilibili的审核策略是什么
     - 为什么我的稿子没有通过审核
-    - 星计划相关的视频一定要打星计划的tag吗
+    - 星计划相关的视频一定要打星计划的tag吗？
     - 你是谁
+    - 但我不是所有的稿件都违反了规定，为啥所有的奖金都取消？
 
 - intent: out_of_scope
   examples: |
@@ -268,6 +269,7 @@ nlu:
 
 - intent: demo_question_2
   examples: |
+    - 但为啥我视频发到b站流量很差啊？ 
     - 我的视频发到B站流量很差，为什么？
     - 为什么我的视频流量很差？
     - 我的视频流量很差，你们是不是把我限流了？
@@ -280,6 +282,7 @@ nlu:
 
 - intent: demo_question_3
   examples: |
+    - 另外我到100万播放了，为啥还没点亮第二关啊？
     - 我到100万播放了，为什么没有点亮第二关？
     - [星计划](activity)活动中，我到100万播放了，为什么没有点亮第二关？
     - [2023的5月20日](time)报名[星计划](activity)，我到100万播放了，为什么没有点亮第二关？
@@ -288,19 +291,23 @@ nlu:
     - 我到100万播放了，为什么我的[星计划](activity)第二关还有点亮
     - 我到100万播放了，为什么我[2023的5月20日](time)报名的[星计划](activity)第二关还有点亮
 
-- intent: inform_activity_time
+- intent: inform_time
   examples: |
-    - [对](activity)，我报名通过的日期是[2023的5月20日](time)
-    - [对](activity)的，我报名通过的日期是[2023的5月20日](time)
-    - [是的](activity)，我报名的日期大概是是[2023的5月份](time)
     - 我报名通过的日期是[2023的5月20日](time)
     - 我报名的日期大概是是[2023的5月份](time)
+    - [2023的5月20日](time)
 
 - intent: demo_question_5
   examples: |
     - 我完成任务了，怎么没收到钱啊？
     - [星计划](activity)任务完成了，怎么没有收到钱？
     - 我完成了[星计划](activity)任务，为什么没有收到钱？
+
+- intent: not_receive_money_after_6_days
+  examples: |
+    - 但我已经结束6天了，看后台还是没收到钱啊
+    - 但我已经结束6天了，还是没有收到钱
+    - 但我已经结束很多天了，看后台还是没收到钱啊
 
 - intent: demo_question_6
   examples: |
@@ -309,6 +316,7 @@ nlu:
     - 我改怎么做可以获得更多的流量？
     - 我想获得更多的流量该怎么做？
     - 流量怎么获得？
+    - 那有什么其他方式能获得流量呢？
 
 - intent: recommend_activity
   examples: |
@@ -321,6 +329,7 @@ nlu:
     - 我是知识区的，打算投稿AIGC的科普视频
     - 我打算在知识区投稿AIGC的科普视频
     - 准备做知识区AIGC的科普视频怎么样
+    - 我打算投稿AIGC的科普视频到知识区
 
 - intent: demo_question_7
   examples: |
@@ -343,3 +352,24 @@ nlu:
     - 好的，有没有什么比较好的相关视频呀，我想看一下
     - ok，我想看一下比较好的相关的视频
     - 嗯， 给我推荐一下比较好的相关视频
+
+- intent: not_tag_about_flow
+  examples: |
+    - 不打会影响流量吗？
+    - 不打tag会影响流量吗？
+    - 不打星计划tag会影响流量吗？
+
+- intent: how_to_check_active_date
+  examples: |
+    - 怎么看任务生效期啊？
+    - 生效期怎么查看？
+    - 怎么查看生效期？
+    - 哪里查看任务生效期？
+    - 那我怎么查询任务生效期？
+    - 怎么查看我是否还在任务生效期？
+
+- intent: inform_active_date_check
+  examples: |
+    - 我还在任务期的
+    - 那我还在
+    - 在的

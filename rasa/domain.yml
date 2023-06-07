@@ -25,6 +25,10 @@ intents:
   - recommend_activity
   - aigc_part_suggest
   - sumbit_video_url
+  - not_tag_about_flow
+  - how_to_check_active_date
+  - inform_active_date_check
+  - not_receive_money_after_6_days
 
 entities:
   - activity
@@ -60,71 +64,85 @@ slots:
 
 responses:
   utter_greet:
-    - text: "你好，有什么可以帮助您的吗？"
+    - text: "亲爱的UP主您好，请问有什么可以帮助您的吗？"
 
   utter_goodbye:
     - text: "那我先离开了，一会有事叫我"
     - text: "先不打扰你了，你可以随时唤醒我"
 
   utter_ask_activity:
-    - text: "亲爱的UP主，请问您是指以下任一活动吗（若是请回复对应数字编号）？如果我没有覆盖到您参与的活动，也辛苦告诉我活动名称哦～ \n 
-            1. 星计划：https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
-            2. AIGC启航计划：https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html \n 
-            3. 宝藏老师夏日企划：https://www.bilibili.com/blackboard/activity-vZYjU10ayo.html"
+    - text: "亲爱的UP主，基于您的主投分区【知识区】，请问您是指以下任一活动吗（若是，请回复对应数字编号）？如果我没有覆盖到您参与的活动，也辛苦告诉我活动名称哦～ \n 
+            1.  星计划：https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
+            2.  分区活动：AIGC启航计划https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html \n 
+            3.  若是其他活动，请直接告诉我活动名称哦～"
 
   utter_ask_activity2:
-    - text: "亲爱的UP主，请问您是指以下任一活动吗（若是请回复对应数字编号）？如果我没有覆盖到您参与的活动，也辛苦告诉我活动名称哦～ \n 
-            1. 星计划：https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
-            2. AIGC启航计划：https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html \n 
-            3. 宝藏老师夏日企划：https://www.bilibili.com/blackboard/activity-vZYjU10ayo.html"
+    - text: "亲爱的UP主，抱歉让您久等了。基于您的主投分区【知识区】，请问您是指以下任一活动吗（若是，请回复对应数字编号）？如果我没有覆盖到您参与的活动，也辛苦告诉我活动名称哦～ \n 
+            1. 星计划：https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
+            2. 分区活动：AIGC启航计划https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html \n 
+            3.  若是其他活动，请直接告诉我活动名称哦～"
 
   utter_activity_slots_values:
-    - text: "好的了解。您是指{activity}-限时任务页面的播放进度条没实时显示吗？"
+    - text: "好的了解。您是指 {activity}-限时任务页面的播放进度条没实时显示吗？"
 
   utter_ask_demo2_1:
-    - text: "UP主您好，很抱歉您有这样的感受，我会尽力帮助您提升投稿体验。请问你有参与“星计划”，并且仍然处于任务生效期间吗？"
+    - text: "很抱歉您会有这样的感受，我会尽力帮助您提升投稿体验。请问您有参与“星计划”，并且仍然处于任务生效期间吗？"
 
   utter_intense_emotion_of_play_amount:
-    - text: "平台间用户对于内容画风的偏好不同，建议可以多学习B站高播内容了解用户喜好，作出相应的调整尝试优化哦。您也可以提供相关的视频链接，我们会按客询顺序，帮您看看具体情况哦。"
+    - text: "平台间用户对于内容画风的偏好不同，建议可以多学习B站高播内容了解用户喜好，作出相应的调整尝试优化哦。您也可以提供相关的视频链接，我们为您查看具体情况哦。"
 
-  utter_ask_activity_time_form_activity:
-    - text: "亲爱的UP主，请问您是指“星计划”活动的“优质内容任务”吗？如果是的话，也请告诉我你成功通过星计划报名审核的年/月/日期，我来为您核实情况哦！"
-
-  utter_ask_activity_time_form_time:
-    - text: "亲爱的UP主，请问您是指“星计划”活动的“优质内容任务”吗？如果是的话，也请告诉我你成功通过星计划报名审核的年/月/日期，我来为您核实情况哦！"
+  utter_ask_time_form_time:
+    - text: "请告诉我你通过星计划报名审核的年/月/日期，我来为您核实情况哦！您可以在 星计划任务页面-KOL专属任务 处查看任务开始的日期：\n 
+            https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
+            ![查看星计划报名日期](https://ms-yzc.oss-cn-beijing.aliyuncs.com/biqa/xinjihua01/ckxjhrwksrq.png)"
 
   utter_how_to_acquire_flow_1:
-    - text: "亲爱的UP主您好，您可以通过优化视频封面标题及内容、上传视频时正确打标签、加强与粉丝互动等方式来提升视频的数据数据哦！如果您是新人UP主，推荐您观看我们站内的创作学院，学习更多创作技能：https://member.bilibili.com/academy/。此外，投稿到站内最新活动，也有机会获得更多的活动曝光和流量扶持！"
+    - text: "您可以通过优化视频封面标题及内容、上传视频时正确打标签、加强与粉丝互动等方式来提升视频的数据数据哦！如果您是新人UP主，推荐您观看我们站内的创作学院，学习更多创作技能：\n 
+            https://member.bilibili.com/academy/ \n 
+            此外，投稿到站内最新活动，也有机会获得更多的活动曝光和流量扶持！"
 
   utter_suggest_aigc_post:
-    - text: "了解了，这是一个不错的题材，很期待～根据您的题材，我推荐您可以投稿知识区的《AIGC启航计划》活动，您可以点击链接跳转活动页面查看奖励规则详情，以及浏览同类题材优质视频获取灵感哦： \n
+    - text: "了解了，这是一个不错的题材，很期待～根据您的题材，我推荐您可以投稿知识区的《AIGC启航计划》活动，您可以点击链接跳转活动页面查看奖励规则详情，以及浏览同类题材优质视频获取灵感哦：\n 
             https://www.bilibili.com/blackboard/activity-fZ7A5opxlp.html?spm_id_from=333.337.0.0"
   
   utter_question_8_answer_1:
-    - text: "当然，这是个好主意！为帮助你更高效地制作视频，我有一些建议： \n 
-            （1）视频的开头：你可以从解释AI的基本概念开始，比如什么是AI，它是如何工作的，以及它在视频制作中的应用。这将帮助观众理解AI的重要性和潜力； \n 
-            （2）AI在视频制作中的应用：接下来，你可以详细介绍AI在视频制作中的应用。例如，AI可以帮助自动剪辑视频，识别和标记视频中的对象，自动生成字幕，以及提供内容推荐等； \n 
-            （3）实际案例：提供一些实际的案例，展示如何使用AI工具来提高视频制作的效率。这可以包括使用AI进行视频编辑，使用AI进行内容分析，以及使用AI进行观众分析等； \n 
-            （4）演示：如果可能的话，你可以进行一次实际的演示，展示如何使用一个特定的AI工具来提高视频制作的效率。这将帮助观众更好地理解和应用这些工具； \n 
-            （5）讨论AI的优点和挑战：在视频的最后部分，你可以讨论使用AI进行视频制作的优点和挑战。例如，AI可以帮助节省时间和提高效率，但同时也可能存在一些挑战，如数据隐私问题，以及AI工具的准确性等； \n 
+    - text: "当然，这是个好主意！为帮助你更高效地制作视频，我有一些建议：\n
+            （1）视频的开头：你可以从解释AI的基本概念开始，比如什么是AI，它是如何工作的，以及它在视频制作中的应用。这将帮助观众理解AI的重要性和潜力；\n
+            （2）AI在视频制作中的应用：接下来，你可以详细介绍AI在视频制作中的应用。例如，AI可以帮助自动剪辑视频，识别和标记视频中的对象，自动生成字幕，以及提供内容推荐等；\n
+            （3）实际案例：提供一些实际的案例，展示如何使用AI工具来提高视频制作的效率。这可以包括使用AI进行视频编辑，使用AI进行内容分析，以及使用AI进行观众分析等；\n
+            （4）演示：如果可能的话，你可以进行一次实际的演示，展示如何使用一个特定的AI工具来提高视频制作的效率。这将帮助观众更好地理解和应用这些工具；\n
+            （5）讨论AI的优点和挑战：在视频的最后部分，你可以讨论使用AI进行视频制作的优点和挑战。例如，AI可以帮助节省时间和提高效率，但同时也可能存在一些挑战，如数据隐私问题，以及AI工具的准确性等；\n
             （6）结论：在视频的结尾，你可以总结一下主要的观点，并鼓励观众尝试使用AI来提高他们的视频制作效率。"
 
   utter_question_8_answer_2:
-    - text: "没问题。以下是我根据您的选题为您筛选的相关视频，希望能为您带来创作灵感—— \n 
-【同题】 \n 
-1.一站式入门AI绘画！Midjourney胎教级入门指南！普通人也能成为设计师https://www.bilibili.com/video/BV1Bv4y1L79V/?spm_id_from=333.337.search-card.all.click \n 
-2.影视从业者 AI工具指南 Midjourney+Chatgpthttps://www.bilibili.com/video/BV1S44y1Z7QA/?spm_id_from=333.788.recommend_more_video.2&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad \n 
-【ChatGPT被玩坏了】ChatGPT+剪映 傻瓜式一键生成视频教程https://www.bilibili.com/video/BV1y14y1F7sH/?spm_id_from=333.788.recommend_more_video.7&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad"
+    - text: "没问题。以下是我根据您的选题为您筛选的相关视频，希望能为您带来创作灵感—— \n
+            【同题】\n
+            1.一站式入门AI绘画！Midjourney胎教级入门指南！普通人也能成为设计师https://www.bilibili.com/video/BV1Bv4y1L79V/?spm_id_from=333.337.search-card.all.click \n
+            2.影视从业者 AI工具指南 Midjourney+Chatgpthttps://www.bilibili.com/video/BV1S44y1Z7QA/?spm_id_from=333.788.recommend_more_video.2&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad \n
+            3.【ChatGPT被玩坏了】ChatGPT+剪映 傻瓜式一键生成视频教程https://www.bilibili.com/video/BV1y14y1F7sH/?spm_id_from=333.788.recommend_more_video.7&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad"
 
   utter_question_7_answer:
    - text: "根据您提供的视频，我推测您应该是想了解【知识区-职业职场】分区中选题为“1个月拿到工作offer”的视频制作优化方向。您的视频时长为1分15秒，核心论点为想要快速工作上岸需要先制定合理的求职计划，视频整体风格偏向总分结构、单一知识点科普、口播为主。根据您的选题方向和视频风格等，我推荐您可参考以下高播放视频，获取包括选题、封面标题设计、内容节奏编排、观众互动方式等维度的灵感—— \n 
-【同题】\n 
-1.【求职干货】简历一无可写怎么版？助你领经验get大厂offerhttps://www.bilibili.com/video/BV1Lq4y1X7HX/?spm_id_from=333.337.search-card.all.click \n 
-2.半年时间斩获Java后端大厂offer！看看我都经历了啥。Java学习路线总结https://www.bilibili.com/video/BV1EQ4y1v7EM/?spm_id_from=333.337.search-card.all.click \n 
-3.如何一个月内找到工作https://www.bilibili.com/video/BV12Y411D7U6/?spm_id_from=333.337.search-card.all.click \n 
-【同风格】 \n 
-1.进来涨知识！求职你不知道的那些事，千万别踩坑！https://www.bilibili.com/video/BV1na411s7SJ/?spm_id_from=333.788.recommend_more_video.1&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad \n 
-康康 |零经验找实习&面试技巧放送｜简历｜求职｜良心经验分享｜找工作｜应届生校招｜攻略向https://www.bilibili.com/video/BV18t411T7zG/?spm_id_from=333.788.recommend_more_video.4"
+            【同题】\n 
+            1.【求职干货】简历一无可写怎么版？助你领经验get大厂offerhttps://www.bilibili.com/video/BV1Lq4y1X7HX/?spm_id_from=333.337.search-card.all.click \n 
+            2.半年时间斩获Java后端大厂offer！看看我都经历了啥。Java学习路线总结https://www.bilibili.com/video/BV1EQ4y1v7EM/?spm_id_from=333.337.search-card.all.click \n 
+            3.如何一个月内找到工作https://www.bilibili.com/video/BV12Y411D7U6/?spm_id_from=333.337.search-card.all.click \n 
+            【同风格】\n 
+            1.进来涨知识！求职你不知道的那些事，千万别踩坑！https://www.bilibili.com/video/BV1na411s7SJ/?spm_id_from=333.788.recommend_more_video.1&vd_source=9e0d02a83e1998a9ba774b4ffe6165ad \n 
+            2.康康 |零经验找实习&面试技巧放送｜简历｜求职｜良心经验分享｜找工作｜应届生校招｜攻略向https://www.bilibili.com/video/BV18t411T7zG/?spm_id_from=333.788.recommend_more_video.4"
+
+  utter_not_tag_about_flow_answer:
+    - text: "不会影响哦。"
+
+  utter_how_to_get_active_date:
+    - text: "请告诉我你通过星计划报名审核的年/月/日期，我来为您核实情况哦！您可以在 星计划任务页面-KOL专属任务 处查看任务开始的日期：\n 
+            https://www.bilibili.com/blackboard/activity-OogU5AmF8j.html?spm_id_from=333.337.0.0 \n 
+            ![查看星计划报名日期](https://ms-yzc.oss-cn-beijing.aliyuncs.com/biqa/xinjihua01/ckxjhrwksrq.png)"
+
+  utter_not_receive_monet_after_6_days_answer:
+    - text: "星计划任务的发奖审核将根据活动规则&社区规则来判定，若您在活动期整体表现违反了活动规则/社区规则，包括但不限于 （稿件违规/一稿多投/站内外不匹配/低质低创/搬运造假/使用不当方式注册账号和发稿）等行为，将取消发奖操作。辛苦UP主可根据规则自查，活动细则可见规则页面的【第4-其他要求】部分：\n 
+            https://www.bilibili.com/blackboard/activity-4jRV7jWKkx.html \n 
+            ![其他要求](https://ms-yzc.oss-cn-beijing.aliyuncs.com/biqa/xinjihua01/other_requirement.png)"
 actions:
   - action_restarted
   - action_ask_time
@@ -141,7 +159,7 @@ actions:
   - action_gpt_demo_q7_1
   - action_gpt_demo_q7_2
   - validate_activity_form
-  - validate_activity_time_form
+  - validate_time_form
 
 forms:
   activity_form:
@@ -150,9 +168,8 @@ forms:
   activity2_form:
     required_slots:
       - activity
-  activity_time_form:
+  time_form:
     required_slots:
-      - activity
       - time
 
 session_config:

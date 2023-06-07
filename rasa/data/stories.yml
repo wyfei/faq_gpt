@@ -17,7 +17,9 @@ stories:
   steps:
   - intent: demo_question_2
   - action: utter_ask_demo2_1
-  - intent: affirm
+  - intent: how_to_check_active_date
+  - action: utter_how_to_get_active_date
+  - intent: inform_active_date_check
   - action: action_gpt_demo_q2
   - intent: intense_emotion
   - action: utter_intense_emotion_of_play_amount
@@ -31,18 +33,18 @@ stories:
   - action: action_gpt_demo_q3
   - action: action_restarted
 
-- story: demo question 3 happy path
+- story: 另外我到100万播放了，为啥还没点亮第二关啊
   steps:
   - intent: demo_question_3
-  - action: activity_time_form
-  - active_loop: activity_time_form
-  - intent: inform_activity_time
-  - action: activity_time_form
+  - action: time_form
+  - active_loop: time_form
+  - intent: inform_time
+  - action: time_form
   - active_loop: null
   - action: action_gpt_demo_q4
   - action: action_restarted
 
-- story: demo question 5 happy path 1
+- story: 我完成任务了，怎么没收到钱啊？
   steps:
   - intent: demo_question_5
   - action: activity2_form
@@ -61,6 +63,7 @@ stories:
   - action: action_gpt_demo_q6
   - intent: aigc_part_suggest
   - action: utter_suggest_aigc_post
+  - action: action_restarted
 
 - story: demo question 7 video diagnose
   steps:

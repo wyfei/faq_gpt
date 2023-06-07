@@ -51,14 +51,14 @@ rules:
 - rule: demo question 3 
   steps:
     - intent: demo_question_3
-    - action: activity_time_form
-    - active_loop: activity_time_form
+    - action: time_form
+    - active_loop: time_form
 
-- rule: submit activity time form
+- rule: submit time form
   condition:
-  - active_loop: activity_time_form
+  - active_loop: time_form
   steps:
-    - action: activity_time_form
+    - action: time_form
     - active_loop: null
     - action: action_gpt_demo_q4
     - action: action_restarted
@@ -94,3 +94,13 @@ rules:
     - intent: demo_question_8_2
     - action: utter_question_8_answer_2
     - action: action_restarted
+
+- rule: not tag about flow rule
+  steps:
+    - intent: not_tag_about_flow
+    - action: utter_not_tag_about_flow_answer
+
+- rule: answer not receive money after 6 days
+  steps:
+    - intent: not_receive_money_after_6_days
+    - action: utter_not_receive_monet_after_6_days_answer
