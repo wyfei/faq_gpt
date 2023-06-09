@@ -20,6 +20,7 @@ sender = secrets.token_urlsafe(16)
 class StreamRequest(BaseModel):
     """Request body for streaming."""
     message: str
+    recipient_id: int
     
 def check_json_format(raw_msg):
     """
@@ -37,6 +38,7 @@ def check_json_format(raw_msg):
 @router.post("/star")
 async def request_handler_star(query: StreamRequest):
     message = query.message
+    recipientId = query.recipient_id
     # intent = nlu_decide(message=message)
     # if intent == 'ask_summary':
     #     bvid_url = re.search(r"https://www.bilibili.com/video/BV[a-zA-Z0-9]+", message)
@@ -53,7 +55,7 @@ async def request_handler_star(query: StreamRequest):
     # else:
     #     return idle_ask(message)
     
-    rasa_result = rasa_webhook_execute(message)
+    rasa_result = rasa_webhook_execute(message, recipientId)
     if(check_json_format(rasa_result)):
         result_json = json.loads(rasa_result)
         typ = result_json["type"]
@@ -81,10 +83,14 @@ def nlu_decide(message: str) -> str:
     json_result = post(url, request_data)
     return json_result["intent"]["name"]
 
-def rasa_webhook_execute(message: str) -> str:
+def rasa_webhook_execute(message: str, recipientId: int) -> str:
     url=cfg.rasa_rest_api
+    send_id = sender
+    if recipientId:
+        send_id = str(recipientId)
+        
     data = {
-        "sender": sender,
+        "sender": recipientId,
         "message": message
     }
     result = post(url, data)
