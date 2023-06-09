@@ -86,8 +86,8 @@ def nlu_decide(message: str) -> str:
 def rasa_webhook_execute(message: str, recipientId: int) -> str:
     url=cfg.rasa_rest_api
     send_id = sender
-    if recipientId:
-        send_id = str(recipientId)
+    # if recipientId:
+    #     send_id = str(recipientId)
         
     data = {
         "sender": recipientId,
