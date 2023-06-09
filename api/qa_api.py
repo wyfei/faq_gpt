@@ -90,7 +90,7 @@ def rasa_webhook_execute(message: str, recipientId: int) -> str:
     #     send_id = str(recipientId)
         
     data = {
-        "sender": recipientId,
+        "sender": send_id,
         "message": message
     }
     result = post(url, data)
